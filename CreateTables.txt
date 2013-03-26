@@ -1,0 +1,38 @@
+CREATE TABLE `googlemap` (
+  `NO` int(3) NOT NULL auto_increment,
+  `x` double(20,15) NOT NULL,
+  `y` double(20,15) NOT NULL,
+  `zoom` int(1) NOT NULL,
+  `text` varchar(200) NOT NULL,
+  `comment` varchar(200) default NULL,
+  `touroku_id` varchar(100) NOT NULL,
+  `ip` varchar(15) NOT NULL,
+  `todofuken` varchar(200) default NULL,
+  `sikugun` varchar(200) default NULL,
+  `jyusyo` varchar(200) default NULL,
+  `touroku_date` varchar(8) NOT NULL,
+  `touroku_time` varchar(6) NOT NULL,
+  PRIMARY KEY  (`NO`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=78 ;
+CREATE TABLE `houmon` (
+  `comment_no` int(4) NOT NULL auto_increment,
+  `no` int(3) NOT NULL,
+  `houmon_y` varchar(4) NOT NULL,
+  `houmon_m` varchar(2) NOT NULL,
+  `houmon_d` varchar(2) NOT NULL,
+  `comment` varchar(200) NOT NULL,
+  `sougou_point` int(1) NOT NULL,
+  `utiwa_point` int(1) NOT NULL,
+  `touroku_id` varchar(100) NOT NULL,
+  `touroku_date` varchar(8) NOT NULL,
+  `touroku_time` varchar(6) NOT NULL,
+  PRIMARY KEY  (`comment_no`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+CREATE TABLE `login_user` (
+  `id` int(3) NOT NULL auto_increment,
+  `user_name` varchar(100) NOT NULL,
+  `password` varchar(32) NOT NULL,
+  `mb_key` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `user_name` (`user_name`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
